@@ -210,9 +210,10 @@ export function getTokenForProvider(
               character.settings?.secrets?.LIVEPEER_GATEWAY_URL ||
               settings.LIVEPEER_GATEWAY_URL
           );
-      default:
+      default: {
           const errorMessage = `Failed to get token - unsupported model provider: ${provider}`;
           elizaLogger.error(errorMessage);
           throw new Error(errorMessage);
+      }
   }
 }
